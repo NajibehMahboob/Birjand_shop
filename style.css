@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap'); /* فونت فارسی */
+
+:root {
+    --primary-green: #386641;
+    --dark-green: #2b5033;
+    --light-gray: #f9f9f9;
+    --text-color: #333;
+    --white: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-gray);
+    direction: rtl; /* برای فارسی */
+    text-align: right;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Header Styles */
+.main-header {
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 15px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header-left .cart-icon {
+    position: relative;
+    color: var(--white);
+    font-size: 1.8rem;
+    text-decoration: none;
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    background-color: #e74c3c;
+    color: var(--white);
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 0.7rem;
+}
+
+.header-center h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.search-box {
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: var(--white);
+}
+
+.search-box input {
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    outline: none;
+    flex-grow: 1;
+    direction: rtl;
+    text-align: right;
+}
+
+.search-box button {
+    background-color: var(--dark-green);
+    border: none;
+    color: var(--white);
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.search-box button:hover {
+    background-color: #24422b;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.main-nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.main-nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 400;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: #d1d1d1;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--dark-green);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: right;
+}
+
+.dropdown-content a {
+    color: var(--white);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--primary-green);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Main Content */
+.main-content {
+    padding: 40px 0;
+    min-height: 400px;
+    background-color: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+/* Footer Styles */
+.main-footer {
+    background-color: var(--dark-green);
+    color: var(--white);
+    padding: 40px 0 20px;
+    margin-top: 40px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-column h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--white);
+    position: relative;
+}
+
+.footer-column h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-green);
+    margin-top: 5px;
+}
+
+.footer-column p {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+.footer-column i {
+    margin-left: 8px;
+    color: var(--primary-green);
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icon {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--primary-green);
+}
+
+.enamad-logos {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.enamad-logos img {
+    width: 80px;
+    height: 80px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+.map-placeholder img {
+    width: 100%;
+    height: 200px;
+    background-color: #f0f0f0;
+    display: block;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Ticket Floating Icon */
+.ticket-float-icon {
+    position: fixed;
+    bottom: 30px;
+    right: 30px; /* برای راست به چپ */
+    background-color: var(--primary-green);
+    color: var(--white);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.ticket-float-icon:hover {
+    background-color: var(--dark-green);
+    transform: scale(1.05);
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    text-align: right;
+}
+
+.modal-content h2 {
+    color: var(--primary-green);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-content p {
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.close-button {
+    color: #aaa;
+    float: left; /* برای سمت چپ در rtl */
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--dark-green);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.modal-content form input[type="text"],
+.modal-content form input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    direction: rtl;
+    text-align: right;
+}
+
+.modal-content form button {
+    background-color: var(--primary-green);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content form button:hover {
+    background-color: var(--dark-green);
+}
+
+#ticketMessage {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    text-align: center;
+    font-weight: 700;
+    color: var(--primary-green);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-left, .header-right {
+        margin-bottom: 15px;
+    }
+
+    .header-center h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+    }
+
+    .main-nav ul li {
+        margin: 5px 10px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-column h3::after {
+        margin: 5px auto 0;
+    }
+
+    .social-icons, .enamad-logos {
+        justify-content: center;
+        display: flex;
+    }
+}
