@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>داشبورد کاربر</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+body {
+    font-family: "Vazir", sans-serif;
+    background: #f3f4f6;
+    margin: 0;
+    padding: 0;
+}
+
+
+.header {
+    background: #ffffff;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-icon {
+    position: relative;
+    font-size: 1.6rem;
+    color: #4f46e5;
+    cursor: pointer;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: #ef4444;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #4f46e5;
+}
+
+
+.search-box {
+    position: relative;
+}
+
+.search-box input {
+    padding: 8px 35px 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.search-box i {
+    position: absolute;
+    right: 10px;
+    top: 9px;
+    color: #6b7280;
+}
+
+
+.menu-btn {
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: #4f46e5;
+}
+
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 240px;
+    height: 100%;
+    background: #ffffff;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.15);
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 999;
+}
+
+.side-menu.show-menu {
+    right: 0;
+}
+
+.close-menu {
+    text-align: left;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: #4f46e5;
+    margin-bottom: 20px;
+}
+
+
+
+.side-menu h3 {
+    margin-top: 0;
+    color: #4f46e5;
+    font-size: 1.2rem;
+}
+
+.side-menu a {
+    display: block;
+    margin: 15px 0;
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+
+.container {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.welcome-box {
+    background: #4f46e5;
+    color: #fff;
+    padding: 20px;
+    border-radius: 18px;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1f2937;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card i {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 12px;
+    color: #4f46e5;
+}
+
+
+.logout {
+    background: #ef4444;
+    color: #fff !important;
+}
+
+.logout i {
+    color: #fff !important;
+}
+
+.logout:hover {
+    background: #dc2626;
+}
+
+</style>
+</head>
+
+<body>
+
+
+<div class="header">
+
+   
+    <div class="header-right">
+
+       
+        <div class="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        
+        <div class="side-menu">
+            <div class="close-menu">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <h3>منو</h3>
+            <a href="#">صفحه اصلی</a>
+            <a href="#">محصولات</a>
+            <a href="#">درباره ما</a>
+            <a href="#">تماس با ما</a>
+        </div>
+        
+
+        <div class="logo"></div>
+
+        <div class="search-box">
+            <input type="text" placeholder="جستجوی محصولات...">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+    </div>
+
+    <div class="header-left">
+
+        <div class="header-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count">0</span>
+        </div>
+
+        <div class="header-icon">
+            <i class="fa-solid fa-user"></i>
+            
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+
+    <div class="welcome-box">
+        سلام کاربر گرامی، خوش آمدید به فروشگاه ما 🌟
+    </div>
+
+    <div class="cards">
+        <a href="order.html" class="card">
+            <i class="fa-solid fa-box"></i>
+            سفارش‌ها
+        </a>
+
+        <a href="address.html" class="card">
+            <i class="fa-solid fa-location-dot"></i>
+            آدرس‌ها
+        </a>
+
+        <a href="account-info.html" class="card">
+            <i class="fa-solid fa-user-gear"></i>
+            اطلاعات حساب کاربری
+        </a>
+
+        <a href="sign_in.html" class="card logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            خروج از حساب
+        </a>
+    </div>
+
+</div>
+<script>
+    const menu = document.querySelector(".side-menu");
+    const openBtn = document.querySelector(".menu-btn"); 
+    const closeBtn = document.querySelector(".close-menu"); 
+
+    openBtn.addEventListener("click", () => {
+        menu.classList.add("show-menu");
+    });
+
+    closeBtn.addEventListener("click", () => {
+        menu.classList.remove("show-menu");
+    });
+</script>
+
+</body>
+</html>
