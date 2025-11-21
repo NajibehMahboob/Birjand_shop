@@ -1,191 +1,130 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>سبد خرید</title>
+    <meta charset="UTF-8">
+    <title>سبد خرید</title>
+    <link rel="stylesheet" href="cart.css">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-body {
-    font-family: "Vazir", sans-serif;
-    background: #f3f4f6;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    max-width: 900px;
-    margin: 30px auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-}
-
-h2 {
-    margin-bottom: 20px;
-    color: #4f46e5;
-    text-align: center;
-}
-
-.cart-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #f9fafb;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 12px;
-}
-
-.cart-item img {
-    width: 90px;
-    height: 90px;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-.info {
-    flex: 1;
-    margin-right: 15px;
-}
-
-.info h4 {
-    margin: 0 0 10px;
-}
-
-.weight, .price {
-    font-size: 0.9rem;
-    color: #555;
-}
-
-.quantity-control {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.quantity-btn {
-    background: #4f46e5;
-    color: #fff;
-    width: 28px;
-    height: 28px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.remove-btn {
-    background: #ef4444;
-    padding: 6px 10px;
-    border-radius: 8px;
-    color: #fff;
-    cursor: pointer;
-    border: none;
-}
-
-.total-box {
-    margin-top: 25px;
-    padding: 20px;
-    background: #eef2ff;
-    border-radius: 12px;
-    text-align: center;
-    font-size: 1.1rem;
-}
-
-.pay-btn {
-    display: block;
-    width: 96%;
-    background: #4f46e5;
-    color: white;
-    padding: 15px;
-    border-radius: 12px;
-    text-align: center;
-    font-size: 1.2rem;
-    margin-top: 15px;
-    text-decoration: none;
-}
-
-.pay-btn:hover {
-    background: #4338ca;
-}
-</style>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
-<div class="container">
-    <h2>سبد خرید</h2>
+<!-- ========================= HEADER ========================= -->
 
-    <div id="cart-items"></div>
+<div class="header">
 
-    <div class="total-box">
-        جمع کل: <span id="total-price">0</span> تومان
+    <div class="header-right">
+
+        <div class="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        
+        <div class="side-menu">
+            <div class="close-menu">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <h3>منو</h3>
+            <a href="#">صفحه اصلی</a>
+            <a href="#">محصولات</a>
+            <a href="#">درباره ما</a>
+            <a href="#">تماس با ما</a>
+        </div>
+
+        <div class="logo">LOGO</div>
+
+        <div class="search-box">
+            <input type="text" placeholder="جستجوی محصولات...">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
     </div>
 
-    <a href="payment.html" class="pay-btn">پرداخت</a>
+    <div class="header-left">
+
+        <div class="header-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count">1</span>
+        </div>
+
+        <div class="header-icon">
+            <i class="fa-solid fa-user"></i>
+        </div>
+
+    </div>
+
 </div>
 
-<script>
-// نمونه سبد خرید
-let cart = [
-    { id: 1, name: "زعفران سرگل ممتاز", weight: "1 گرم", price: 120000, qty: 1, img:"https://via.placeholder.com/150" },
-    { id: 2, name: "زعفران نگین صادراتی", weight: "2 گرم", price: 220000, qty: 2, img:"https://via.placeholder.com/150" }
-];
+<!-- ========================= CART PAGE ========================= -->
 
-function renderCart() {
-    const container = document.getElementById("cart-items");
-    container.innerHTML = "";
+<div class="container">
 
-    let total = 0;
+    <!-- لیست محصولات -->
+    <div class="cart-items">
+        <div class="header-row">
+            <span>محصول</span>
+            <span>قیمت (تومان)</span>
+            <span>عملیات</span>
+        </div>
 
-    cart.forEach(item => {
-        total += item.price * item.qty;
-
-        container.innerHTML += `
-            <div class="cart-item">
-                <img src="${item.img}">
-                <div class="info">
-                    <h4>${item.name}</h4>
-                    <div class="weight">وزن: ${item.weight}</div>
-                    <div class="price">قیمت: ${item.price.toLocaleString()} تومان</div>
-                </div>
-
-                <div class="quantity-control">
-                    <button class="quantity-btn" onclick="changeQty(${item.id}, 1)">+</button>
-                    <span>${item.qty}</span>
-                    <button class="quantity-btn" onclick="changeQty(${item.id}, -1)">-</button>
-                </div>
-
-                <button class="remove-btn" onclick="removeItem(${item.id})">
-                    حذف
-                </button>
+        <div class="cart-item">
+            <div class="course-info">
+                <img src="https://via.placeholder.com/120x80" class="product-img">
+                <span class="title">پسته</span>
             </div>
-        `;
+
+            <div class="price">۵۰۰,۰۰۰</div>
+
+            <button class="delete-btn">🗑</button>
+        </div>
+
+    </div>
+
+    <!-- ستون پرداخت -->
+    <div class="checkout-box">
+
+        <h2>سبد خرید</h2>
+
+        <div class="row">
+            <span>مجموع</span>
+            <strong>۵۰۰,۰۰۰ تومان</strong>
+        </div>
+
+
+        <div class="payable">
+            قابل پرداخت: <strong>۵۰۰,۰۰۰ تومان</strong>
+        </div>
+
+        <div class="payment-method">
+            <p>روش پرداخت</p>
+
+            <label class="pay-option">
+                <input type="radio" checked>
+                <span>پرداخت اینترنتی</span>
+            </label>
+        </div>
+
+        <a href="payment.html" class="pay-btn">پرداخت</a>
+
+    </div>
+
+</div>
+
+<!-- ========================= SCRIPT: MENU OPEN/CLOSE ========================= -->
+
+<script>
+    const menuBtn = document.querySelector(".menu-btn");
+    const sideMenu = document.querySelector(".side-menu");
+    const closeMenu = document.querySelector(".close-menu");
+
+    menuBtn.addEventListener("click", () => {
+        sideMenu.classList.add("show-menu");
     });
 
-    document.getElementById("total-price").textContent = total.toLocaleString();
-}
-
-function changeQty(id, amount) {
-    const item = cart.find(i => i.id === id);
-    if (!item) return;
-
-    item.qty += amount;
-    if (item.qty < 1) item.qty = 1;
-
-    renderCart();
-}
-
-function removeItem(id) {
-    cart = cart.filter(i => i.id !== id);
-    renderCart();
-}
-
-renderCart();
+    closeMenu.addEventListener("click", () => {
+        sideMenu.classList.remove("show-menu");
+    });
 </script>
 
 </body>
