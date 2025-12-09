@@ -9,6 +9,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+<body>
+    <!-- Hamburger Menu Icon -->
+    <div class="hamburger-menu-icon" id="hamburgerIcon">
+        <i class="fas fa-bars"></i>
+        <span>منو</span>
+    </div>
+
+    <!-- Off-canvas Menu Panel -->
+    <div class="off-canvas-menu" id="offCanvasMenu">
+        <div class="menu-header">
+            <span class="close-off-canvas" id="closeOffCanvas">&times;</span>
+            <h3>منو</h3>
+        </div>
+        <ul class="menu-list">
+            <li><a href="#">آجیل <i class="fas fa-chevron-left"></i></a></li>
+            <li><a href="#">خشکبار <i class="fas fa-chevron-left"></i></a></li>
+            <li><a href="#">زعفران <i class="fas fa-chevron-left"></i></a></li>
+            <li><a href="#">تنقلات <i class="fas fa-chevron-left"></i></a></li>
+            <li><a href="#">بسته‌های کادویی <i class="fas fa-chevron-left"></i></a></li>
+            <li><a href="#">کالای اساسی و خواربار <i class="fas fa-chevron-left"></i></a></li>
+            <li><a href="#">شکلات <i class="fas fa-chevron-left"></i></a></li>
+            <li><a href="#">محصولات ویژه <i class="fas fa-chevron-left"></i></a></li>
+            <li><a href="#">پک اقتصادی خانوار</a></li>
+        </ul>
+        <ul class="menu-options">
+            <li><a href="#"><i class="fas fa-calendar-alt"></i> تقویم کاری</a></li>
+            <li><a href="#"><i class="fas fa-paper-plane"></i> تماس با ما</a></li>
+            <li><a href="#"><i class="fas fa-box"></i> خرید پک های یلدا و سازمانی</a></li>
+            <li><a href="#"><i class="fas fa-book-open"></i> مجله سلامت</a></li>
+        </ul>
+    </div>
+
+    <!-- Overlay for when menu is open -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- بقیه کدهای index.php از اینجا شروع میشن، مثل <header class="main-header"> -->
 
     <header class="main-header">
         <div class="container">
