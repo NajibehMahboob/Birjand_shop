@@ -443,10 +443,38 @@ body {
 .subsection-title {
     font-size: 1.8rem;
     color: var(--primary-green);
-    margin-bottom: 40px;
+    margin-bottom: 40px; /* فاصله از بخش زیرین */
+    margin-top: 60px; /* این خط رو برای فاصله از بخش بالایی اضافه کن اگه قبلا توی HTML با style اینلاین ندادی */
     font-weight: 700;
-    position: relative;
-    display: inline-block;
+    
+    /* برای وسط چین کردن و قرار دادن خطوط کناری */
+    display: flex; /* تبدیل به Flex Container */
+    align-items: center; /* وسط چین عمودی محتوا (متن و خطوط) */
+    justify-content: center; /* وسط چین افقی محتوا */
+    
+    width: fit-content; /* عرض را متناسب با محتوا تنظیم کن */
+    margin-left: auto; /* برای وسط چین کردن کل عنصر در والدش */
+    margin-right: auto; /* برای وسط چین کردن کل عنصر در والدش */
+}
+
+/* استایل دهی خطوط کناری */
+.subsection-title::before,
+.subsection-title::after {
+    content: '';
+    display: block; /* اطمینان از اینکه به عنوان بلاک رفتار کنند */
+    width: 50px; /* طول خطوط کناری */
+    height: 2px;
+    background-color: var(--primary-green);
+    margin: 0 15px; /* فاصله خطوط از متن */
+}
+
+/* در صورت نیاز به تنظیمات ریسپانسیو برای خطوط */
+@media (max-width: 768px) {
+    .subsection-title::before,
+    .subsection-title::after {
+        width: 30px; /* طول کمتر خطوط در موبایل */
+        margin: 0 10px; /* فاصله کمتر در موبایل */
+    }
 }
 
 .subsection-title::before,
@@ -685,4 +713,13 @@ input[type=number]::-webkit-outer-spin-button {
         width: 90%; /* عرض بیشتر در موبایل */
         max-width: 350px; /* حداکثر عرض در موبایل */
     }
+}
+/* Separator Line */
+/* Separator Line */
+.separator-line {
+    width: 900px; /* طول خط را افزایش دادیم */
+    height: 3px;
+    background-color: #e0e0e0;
+    margin: 20px auto;
+    border-radius: 5px;
 }

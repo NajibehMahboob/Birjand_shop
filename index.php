@@ -51,6 +51,7 @@
             <div class="container">
                 <section class="products-section">
                     <h2 class="section-title">خرید آجیل</h2>
+                    <div class="separator-line"></div>
                     <h3 class="subsection-title">خرید آجیل شور</h3>
 
                     <div class="product-cards-container">
@@ -165,6 +166,117 @@
                         </div>
 
                     </div>
+                    </div> <!-- پایان div product-cards-container برای آجیل شور -->
+
+                    <h3 class="subsection-title" >خرید آجیل خام (شیرین)</h3>
+
+                    <div class="product-cards-container">
+                        <!-- Product Card 1 - آجیل بلدا -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/7.png" alt="آجیل یلدا">
+                            </div>
+                            <div class="product-info">
+                                <h4 class="product-name">آجیل بلدا</h4>
+                                <p class="old-price">۲۴۹۰۰۰ تومان</p>
+                                <p class="current-price">۱۴۹۰۰۰ تومان</p>
+                                <div class="weight-options">
+                                    <span class="weight-label">وزن:</span>
+                                    <button class="weight-btn active">۱ کیلوگرم</button>
+                                    <button class="weight-btn">۵۰۰ گرم</button>
+                                    <button class="weight-btn">۲۵۰ گرم</button>
+                                </div>
+                                <div class="add-to-cart">
+                                    <button class="add-btn">افزودن به سبد خرید</button>
+                                    <div class="quantity-control">
+                                        <button class="qty-btn">-</button>
+                                        <input type="text" value="1" class="qty-input">
+                                        <button class="qty-btn">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 2 - آجیل دیابتی -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/1.png" alt="آجیل دیابتی">
+                            </div>
+                             <div class="product-info">
+                                <h4 class="product-name">آجیل دیابتی</h4>
+                                <p class="old-price">۲۲۲۰۰۰ تومان</p>
+                                <p class="current-price">۱۷۵۱۰۰۰ تومان</p>
+                                <div class="weight-options">
+                                    <span class="weight-label">وزن:</span>
+                                    <button class="weight-btn active">۱ کیلوگرم</button>
+                                    <button class="weight-btn">۵۰۰ گرم</button>
+                                    <button class="weight-btn">۲۵۰ گرم</button>
+                                </div>
+                                <div class="add-to-cart">
+                                    <button class="add-btn">افزودن به سبد خرید</button>
+                                    <div class="quantity-control">
+                                        <button class="qty-btn">-</button>
+                                        <input type="text" value="1" class="qty-input">
+                                        <button class="qty-btn">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 3 - آجیل 4 مغز خام -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/6.png" alt="آجیل 4 مغز خام">
+                            </div>
+                             <div class="product-info">
+                                <h4 class="product-name">آجیل 4 مغز خام</h4>
+                                <p class="old-price">۲۴۴۰۰۰ تومان</p>
+                                <p class="current-price">۲۲۲۰۰۰ تومان</p>
+                                <div class="weight-options">
+                                    <span class="weight-label">وزن:</span>
+                                    <button class="weight-btn active">۱ کیلوگرم</button>
+                                    <button class="weight-btn">۵۰۰ گرم</button>
+                                    <button class="weight-btn">۲۵۰ گرم</button>
+                                </div>
+                                <div class="add-to-cart">
+                                    <button class="add-btn">افزودن به سبد خرید</button>
+                                    <div class="quantity-control">
+                                        <button class="qty-btn">-</button>
+                                        <input type="text" value="1" class="qty-input">
+                                        <button class="qty-btn">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 4 - آجیل 5 مغز خام -->
+                        <div class="product-card">
+                            <div class="discount-badge">۸٪ تخفیف</div>
+                            <div class="product-image">
+                                <img src="images/8.png" alt="آجیل 5 مغز خام">
+                            </div>
+                             <div class="product-info">
+                                <h4 class="product-name">آجیل 5 مغز خام</h4>
+                                <p class="old-price">۲۸۲۰۰۰ تومان</p>
+                                <p class="current-price">۲۵۹۴۰۰۰ تومان</p>
+                                <div class="weight-options">
+                                    <span class="weight-label">وزن:</span>
+                                    <button class="weight-btn active">۱ کیلوگرم</button>
+                                    <button class="weight-btn">۵۰۰ گرم</button>
+                                    <button class="weight-btn">۲۵۰ گرم</button>
+                                </div>
+                                <div class="add-to-cart">
+                                    <button class="add-btn">افزودن به سبد خرید</button>
+                                    <div class="quantity-control">
+                                        <button class="qty-btn">-</button>
+                                        <input type="text" value="1" class="qty-input">
+                                        <button class="qty-btn">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- پایان div product-cards-container برای آجیل خام -->
                 </section>
             </div>
         </main>
