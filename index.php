@@ -20,7 +20,7 @@
     <div class="off-canvas-menu" id="offCanvasMenu">
         <div class="menu-header">
             <span class="close-off-canvas" id="closeOffCanvas">&times;</span>
-            <h3>منو</h3>
+            <h3></h3>
         </div>
         <ul class="menu-list">
             <li><a href="#">آجیل <i class="fas fa-chevron-left"></i></a></li>
@@ -426,6 +426,47 @@
                 ticketMessageDiv.innerHTML = '<p style="color: red;">خطا در ارسال تیکت. لطفا مجددا تلاش کنید.</p>';
             });
         });
+       
+         // ... (کدهای جاوااسکریپت برای modal ticket) ...
+
+         // JavaScript for Hamburger Menu - باید اینجا باشه
+    const hamburgerIcon = document.getElementById('hamburgerIcon');
+    const offCanvasMenu = document.getElementById('offCanvasMenu');
+    const closeOffCanvas = document.getElementById('closeOffCanvas');
+    const menuOverlay = document.getElementById('menuOverlay');
+
+    if (hamburgerIcon) { // برای اطمینان که عنصر وجود داره
+        hamburgerIcon.addEventListener('click', () => {
+            offCanvasMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    if (closeOffCanvas) { // برای اطمینان که عنصر وجود داره
+        closeOffCanvas.addEventListener('click', () => {
+            offCanvasMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    }
+
+    if (menuOverlay) { // برای اطمینان که عنصر وجود داره
+        menuOverlay.addEventListener('click', () => {
+            offCanvasMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    }
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && offCanvasMenu && offCanvasMenu.classList.contains('open')) {
+            offCanvasMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+</script>
 
     </script>
 </body>

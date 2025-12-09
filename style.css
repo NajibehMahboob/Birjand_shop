@@ -35,6 +35,9 @@ body {
     background-color: var(--primary-green);
     color: var(--white);
     padding: 15px 0;
+    position: sticky; /* این خط باعث میشه هدر ثابت بمونه */
+    top: 0;           /* این خط میگه به بالای صفحه بچسبه */
+    z-index: 999; 
 }
 
 .header-content {
@@ -722,4 +725,142 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: #e0e0e0;
     margin: 20px auto;
     border-radius: 5px;
+}
+/* Hamburger Menu Icon */
+.hamburger-menu-icon {
+    position: fixed;
+    top: 110px;
+    right: 20px; /* برای RTL */
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    z-index: 1002; /* بالاتر از همه چیز */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+.hamburger-menu-icon:hover {
+    background-color: var(--dark-green);
+}
+
+.hamburger-menu-icon i {
+    font-size: 1.3rem;
+}
+
+/* Off-canvas Menu Panel */
+.off-canvas-menu {
+    position: fixed;
+    top: 0;
+    right: -300px; /* شروع از بیرون صفحه برای RTL */
+    width: 300px;
+    height: 100%;
+    background-color: var(--white);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2); /* سایه به سمت چپ */
+    z-index: 1003;
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto; /* برای اسکرول در صورت نیاز */
+    direction: rtl;
+    text-align: right;
+}
+
+.off-canvas-menu.open {
+    right: 0; /* وقتی باز میشه میاد داخل صفحه */
+}
+
+.menu-header {
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.close-off-canvas {
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    color: var(--white);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.close-off-canvas:hover {
+    opacity: 1;
+}
+
+.menu-list, .menu-options {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+}
+
+.menu-list li a, .menu-options li a {
+    display: flex;
+    justify-content: space-between; /* برای فاصله بین متن و آیکون */
+    align-items: center;
+    padding: 15px 20px;
+    color: var(--text-color);
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-list li a:hover, .menu-options li a:hover {
+    background-color: #f5f5f5;
+    color: var(--primary-green);
+}
+
+.menu-list li a i.fa-chevron-left {
+    color: #999;
+    font-size: 0.8rem;
+}
+
+.menu-options {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.menu-options li a i {
+    margin-left: 10px; /* فاصله آیکون از متن برای RTL */
+    color: var(--primary-green);
+    font-size: 1.1rem;
+}
+
+.menu-options li:last-child a {
+    border-bottom: none; /* حذف خط از آخرین آیتم */
+}
+
+/* Overlay */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1002;
+    display: none; /* مخفی در حالت عادی */
+}
+
+.menu-overlay.active {
+    display: block; /* نمایش وقتی منو بازه */
+}
+
+/* Responsive adjustments for hamburger icon */
+@media (min-width: 992px) {
+    .hamburger-menu-icon {
+     
+    }
+    /* در اینجا میتونی nav اصلی رو برای دسکتاپ نمایش بدی اگه مخفیش کرده بودی */
+    .main-nav {
+        display: flex !important; /* مطمئن شو که nav اصلی نمایش داده میشه */
+    }
 }
