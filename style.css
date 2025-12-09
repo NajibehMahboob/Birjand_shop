@@ -423,3 +423,266 @@ body {
         display: flex;
     }
 }
+
+/* Product Section Styles */
+.products-section {
+    padding: 40px 0;
+    text-align: center;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.subsection-title {
+    font-size: 1.8rem;
+    color: var(--primary-green);
+    margin-bottom: 40px;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.subsection-title::before,
+.subsection-title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 50px; /* طول خطوط کناری */
+    height: 2px;
+    background-color: var(--primary-green);
+}
+
+.subsection-title::before {
+    right: -70px; /* فاصله از متن */
+}
+
+.subsection-title::after {
+    left: -70px; /* فاصله از متن */
+}
+
+
+.product-cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* برای اینکه در صفحات کوچک به خط بعد برن */
+    gap: 25px; /* فاصله بین کارت ها */
+}
+
+.product-card {
+    background-color: var(--white);
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px; /* عرض ثابت برای هر کارت */
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.discount-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px; /* در RTL */
+    background-color: #e74c3c;
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    z-index: 10;
+}
+
+.product-image {
+    margin-bottom: 20px;
+    height: 180px; /* ارتفاع ثابت برای تصویر */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+    object-fit: contain; /* برای اینکه تصویر کات نشه */
+}
+
+.product-info {
+    text-align: right;
+}
+
+.product-name {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.old-price {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    display: block; /* برای اینکه زیر قیمت جدید قرار بگیره */
+}
+
+.current-price {
+    color: var(--primary-green);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.weight-options {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: flex-end; /* برای RTL */
+}
+
+.weight-label {
+    font-size: 0.9rem;
+    color: #555;
+    margin-left: 10px; /* فاصله از دکمه ها */
+}
+
+.weight-btn {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    color: #555;
+    padding: 8px 12px;
+    margin-left: 5px; /* فاصله بین دکمه ها */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+.weight-btn.active,
+.weight-btn:hover {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+    color: var(--white);
+}
+
+.add-to-cart {
+    display: flex;
+    justify-content: space-between; /* برای فاصله انداختن بین دکمه و کنترل تعداد */
+    align-items: center;
+    margin-top: 25px;
+    gap: 10px;
+}
+
+.add-btn {
+    background-color: #e74c3c;
+    color: var(--white);
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    flex-grow: 1; /* برای اینکه دکمه "افزودن به سبد خرید" فضای بیشتری بگیره */
+    transition: background-color 0.3s ease;
+    font-family: 'Vazirmatn', sans-serif; 
+}
+
+.add-btn:hover {
+    background-color: #c0392b;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.qty-btn {
+    background-color: #f9f9f9;
+    border: none;
+    color: #555;
+    padding: 8px 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.qty-btn:hover {
+    background-color: #eee;
+}
+
+.qty-input {
+    width: 40px;
+    text-align: center;
+    border: none;
+    font-size: 1rem;
+    -moz-appearance: textfield; /* برای فایرفاکس */
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+}
+
+/* Hide spin buttons for number input */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Responsive Adjustments for Products */
+@media (max-width: 1200px) {
+    .product-cards-container {
+        justify-content: space-evenly; /* برای توزیع بهتر در ردیف */
+    }
+}
+
+@media (max-width: 992px) {
+    .product-cards-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* کوچکتر کردن کارت ها */
+    }
+    .product-card {
+        width: unset; /* برای اینکه عرض کارت منعطف بشه */
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    .subsection-title {
+        font-size: 1.5rem;
+    }
+    .subsection-title::before,
+    .subsection-title::after {
+        width: 30px;
+        right: -45px;
+        left: -45px;
+    }
+    .product-cards-container {
+        flex-direction: column; /* در موبایل به صورت ستونی نمایش داده شوند */
+        align-items: center;
+    }
+    .product-card {
+        width: 90%; /* عرض بیشتر در موبایل */
+        max-width: 350px; /* حداکثر عرض در موبایل */
+    }
+}

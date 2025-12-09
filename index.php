@@ -48,11 +48,126 @@
     </header>
 
     <main class="main-content">
-        <div class="container">
-            <!-- اینجا محتوای اصلی صفحه قرار میگیره -->
-            <p>محتوای سایت ...</p>
-        </div>
-    </main>
+            <div class="container">
+                <section class="products-section">
+                    <h2 class="section-title">خرید آجیل</h2>
+                    <h3 class="subsection-title">خرید آجیل شور</h3>
+
+                    <div class="product-cards-container">
+                        <!-- Product Card 1 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/2.png" alt="آجیل 4 مغز شور">
+                            </div>
+                            <div class="product-info">
+                                <h4 class="product-name">آجیل 4 مغز شور</h4>
+                                <!-- <div class="rating">*****</div> حذف شد -->
+                                <p class="old-price">۷۴۹۰۰۰ تومان</p>
+                                <p class="current-price">۶۵۱۰۰۰ تومان</p>
+                                <div class="weight-options">
+                                    <span class="weight-label">وزن:</span>
+                                    <button class="weight-btn active">۱ کیلوگرم</button>
+                                    <button class="weight-btn">۵۰۰ گرم</button>
+                                    <button class="weight-btn">۲۵۰ گرم</button>
+                                </div>
+                                <div class="add-to-cart">
+                                    <button class="add-btn">افزودن به سبد خرید</button>
+                                    <div class="quantity-control">
+                                        <button class="qty-btn">-</button>
+                                        <input type="text" value="1" class="qty-input">
+                                        <button class="qty-btn">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 2 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/3.png" alt="آجیل 5 مغز شور">
+                            </div>
+                             <div class="product-info">
+                                <h4 class="product-name">آجیل 5 مغز شور</h4>
+                                <!-- <div class="rating">*****</div> حذف شد -->
+                                <p class="old-price">۲۸۰۰۰ تومان</p>
+                                <p class="current-price">۲۸۴۰۰۰ تومان</p>
+                                <div class="weight-options">
+                                    <span class="weight-label">وزن:</span>
+                                    <button class="weight-btn active">۱ کیلوگرم</button>
+                                    <button class="weight-btn">۵۰۰ گرم</button>
+                                    <button class="weight-btn">۲۵۰ گرم</button>
+                                </div>
+                                <div class="add-to-cart">
+                                    <button class="add-btn">افزودن به سبد خرید</button>
+                                    <div class="quantity-control">
+                                        <button class="qty-btn">-</button>
+                                        <input type="text" value="1" class="qty-input">
+                                        <button class="qty-btn">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 3 -->
+                        <div class="product-card">
+                            <div class="discount-badge">۱۰٪ تخفیف</div>
+                            <div class="product-image">
+                                <img src="images/4.png" alt="آجیل پذیرایی">
+                            </div>
+                             <div class="product-info">
+                                <h4 class="product-name">آجیل پذیرایی</h4>
+                                <!-- <div class="rating">*****</div> حذف شد -->
+                                <p class="old-price">۱۳۱۰۰۰ تومان</p>
+                                <p class="current-price">۱۱۸۰۰۰ تومان</p>
+                                <div class="weight-options">
+                                    <span class="weight-label">وزن:</span>
+                                    <button class="weight-btn active">۱ کیلوگرم</button>
+                                    <button class="weight-btn">۵۰۰ گرم</button>
+                                    <button class="weight-btn">۲۵۰ گرم</button>
+                                </div>
+                                <div class="add-to-cart">
+                                    <button class="add-btn">افزودن به سبد خرید</button>
+                                    <div class="quantity-control">
+                                        <button class="qty-btn">-</button>
+                                        <input type="text" value="1" class="qty-input">
+                                        <button class="qty-btn">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 4 -->
+                        <div class="product-card">
+                            <div class="discount-badge">۳۰٪ تخفیف</div>
+                            <div class="product-image">
+                                <img src="images/5.png" alt="آجیل ویژه">
+                            </div>
+                             <div class="product-info">
+                                <h4 class="product-name">آجیل ویژه</h4>
+                                <!-- <div class="rating">*****</div> حذف شد -->
+                                <p class="old-price">۹۶۶۰۰۰ تومان</p>
+                                <p class="current-price">۶۷۶۲۰۰ تومان</p>
+                                <div class="weight-options">
+                                    <span class="weight-label">وزن:</span>
+                                    <button class="weight-btn active">۱ کیلوگرم</button>
+                                    <button class="weight-btn">۵۰۰ گرم</button>
+                                    <button class="weight-btn">۲۵۰ گرم</button>
+                                </div>
+                                <div class="add-to-cart">
+                                    <button class="add-btn">افزودن به سبد خرید</button>
+                                    <div class="quantity-control">
+                                        <button class="qty-btn">-</button>
+                                        <input type="text" value="1" class="qty-input">
+                                        <button class="qty-btn">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+        </main>
 
     <footer class="main-footer">
         <div class="container">
