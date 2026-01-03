@@ -4,9 +4,9 @@ require_once 'db_config.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fullName = $_POST['full_name'];
     $phoneNumber = $_POST['phone_number'];
-    $message = "درخواست مشاوره از طریق فرم پشتیبانی"; // میتونی این رو به عنوان پیام پیش‌فرض برای تیکت قرار بدی
+    $message = "درخواست مشاوره از طریق فرم پشتیبانی"; 
 
-    // آماده سازی و اجرای کوئری
+
     $stmt = $conn->prepare("INSERT INTO tickets (full_name, phone_number, message) VALUES (?, ?, ?)");
     $stmt->bind_param("sss", $fullName, $phoneNumber, $message);
 

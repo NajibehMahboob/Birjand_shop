@@ -1,0 +1,131 @@
+
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>سبد خرید</title>
+    <link rel="stylesheet" href="cart.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+
+<div class="header">
+
+    <div class="header-right">
+
+        <div class="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        
+        <div class="side-menu">
+            <div class="close-menu">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <h3>منو</h3>
+            <a href="#">صفحه اصلی</a>
+            <a href="#">محصولات</a>
+            <a href="#">درباره ما</a>
+            <a href="#">تماس با ما</a>
+        </div>
+
+        <div class="logo">LOGO</div>
+
+        <div class="search-box">
+            <input type="text" placeholder="جستجوی محصولات...">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+    </div>
+
+    <div class="header-left">
+
+        <div class="header-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count">1</span>
+        </div>
+
+        <div class="header-icon">
+            <i class="fa-solid fa-user"></i>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ========================= CART PAGE ========================= -->
+
+<div class="container">
+
+    <!-- لیست محصولات -->
+    <div class="cart-items">
+        <div class="header-row">
+            <span>محصول</span>
+            <span>قیمت (تومان)</span>
+            <span>عملیات</span>
+        </div>
+
+        <div class="cart-item">
+            <div class="course-info">
+                <img src="https://via.placeholder.com/120x80" class="product-img">
+                <span class="title">پسته</span>
+            </div>
+
+            <div class="price">۵۰۰,۰۰۰</div>
+
+            <button class="delete-btn">🗑</button>
+        </div>
+
+    </div>
+
+    <!-- ستون پرداخت -->
+    <div class="checkout-box">
+
+        <h2>سبد خرید</h2>
+
+        <div class="row">
+            <span>مجموع</span>
+            <strong>۵۰۰,۰۰۰ تومان</strong>
+        </div>
+
+
+        <div class="payable">
+            قابل پرداخت: <strong>۵۰۰,۰۰۰ تومان</strong>
+        </div>
+
+        <div class="payment-method">
+            <p>روش پرداخت</p>
+
+            <label class="pay-option">
+                <input type="radio" checked>
+                <span>پرداخت اینترنتی</span>
+            </label>
+        </div>
+
+        <a href="payment.html" class="pay-btn">پرداخت</a>
+
+    </div>
+
+</div>
+
+<!-- ========================= SCRIPT: MENU OPEN/CLOSE ========================= -->
+
+<script>
+    const menuBtn = document.querySelector(".menu-btn");
+    const sideMenu = document.querySelector(".side-menu");
+    const closeMenu = document.querySelector(".close-menu");
+
+    menuBtn.addEventListener("click", () => {
+        sideMenu.classList.add("show-menu");
+    });
+
+    closeMenu.addEventListener("click", () => {
+        sideMenu.classList.remove("show-menu");
+    });
+</script>
+
+</body>
+</html>

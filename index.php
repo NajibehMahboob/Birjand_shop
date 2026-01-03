@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>خشکبار بیرجند</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for icons -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 <body>
-    <!-- Hamburger Menu Icon -->
+ 
     <div class="hamburger-menu-icon" id="hamburgerIcon">
         <i class="fas fa-bars"></i>
         <span>منو</span>
     </div>
 
-    <!-- Off-canvas Menu Panel -->
+ 
     <div class="off-canvas-menu" id="offCanvasMenu">
         <div class="menu-header">
             <span class="close-off-canvas" id="closeOffCanvas">&times;</span>
@@ -34,50 +34,57 @@
             <li><a href="#">پک اقتصادی خانوار</a></li>
         </ul>
         <ul class="menu-options">
-            <li><a href="#"><i class="fas fa-calendar-alt"></i> تقویم کاری</a></li>
-            <li><a href="#"><i class="fas fa-paper-plane"></i> تماس با ما</a></li>
-            <li><a href="#"><i class="fas fa-box"></i> خرید پک های یلدا و سازمانی</a></li>
-            <li><a href="#"><i class="fas fa-book-open"></i> مجله سلامت</a></li>
+            <li><a href="#footer"><i class="fas fa-paper-plane"></i> تماس با ما</a></li>
         </ul>
     </div>
 
-    <!-- Overlay for when menu is open -->
+
     <div class="menu-overlay" id="menuOverlay"></div>
 
-    <!-- بقیه کدهای index.php از اینجا شروع میشن، مثل <header class="main-header"> -->
+
 
     <header class="main-header">
         <div class="container">
             <div class="header-content">
-                <div class="header-left">
-                    <a href="#" class="cart-icon">
-                        <i class="fas fa-shopping-basket"></i>
-                        <span class="cart-count">0</span>
-                    </a>
-                </div>
-                <div class="header-center">
-                    <h1>خشکبار بیرجند</h1>
-                </div>
+ 
+
                 <div class="header-right">
                     <div class="search-box">
                         <input type="text" placeholder="جستجو برای محصولات...">
                         <button><i class="fas fa-search"></i></button>
                     </div>
                 </div>
+
+                <div class="header-center">
+                    <h1>خشکبار بیرجند</h1>
+                </div>
+
+                <div class="header-left">
+                    <a href="./Cart/cart.php" class="cart-icon">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+                
+                <div class="header-buttons">
+                   <a href="./UserAccount/sign_in.php" class="btn-header">ورود</a>
+                   <a href="./UserAccount/sign_up.php" class="btn-header btn-signup">ثبت نام</a>
+                </div>
+
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#">صفحه نخست</a></li>
+                    <li><a href="index.php">صفحه نخست</a></li>
                     <li class="dropdown">
-                        <a href="#">دسته بندی محصولات <i class="fas fa-caret-down"></i></a>
+                        <a href="index.php">دسته بندی محصولات <i class="fas fa-caret-down"></i></a>
                         <div class="dropdown-content">
-                            <!-- اینجا میتونی لینک دسته بندی ها رو بذاری -->
-                            <a href="#">خشکبار</a>
-                            <a href="#">زعفران</a>
+                        
+                            <a href="index.php">خشکبار</a>
+                            <a href="index.php">زعفران</a>
                         </div>
                     </li>
                     <li><a href="#">سبدخرید</a></li>
-                    <li><a href="#">درباره ما</a></li>
+                    <li><a href="#footer">درباره ما</a></li>
                 </ul>
             </nav>
         </div>
@@ -91,14 +98,14 @@
                     <h3 class="subsection-title">خرید آجیل شور</h3>
 
                     <div class="product-cards-container">
-                        <!-- Product Card 1 -->
+                        
                         <div class="product-card">
                             <div class="product-image">
                                 <img src="images/2.png" alt="آجیل 4 مغز شور">
                             </div>
                             <div class="product-info">
                                 <h4 class="product-name">آجیل 4 مغز شور</h4>
-                                <!-- <div class="rating">*****</div> حذف شد -->
+                            
                                 <p class="old-price">۷۴۹۰۰۰ تومان</p>
                                 <p class="current-price">۶۵۱۰۰۰ تومان</p>
                                 <div class="weight-options">
@@ -118,14 +125,14 @@
                             </div>
                         </div>
 
-                        <!-- Product Card 2 -->
+                      
                         <div class="product-card">
                             <div class="product-image">
                                 <img src="images/3.png" alt="آجیل 5 مغز شور">
                             </div>
                              <div class="product-info">
                                 <h4 class="product-name">آجیل 5 مغز شور</h4>
-                                <!-- <div class="rating">*****</div> حذف شد -->
+                        
                                 <p class="old-price">۲۸۰۰۰ تومان</p>
                                 <p class="current-price">۲۸۴۰۰۰ تومان</p>
                                 <div class="weight-options">
@@ -145,7 +152,7 @@
                             </div>
                         </div>
 
-                        <!-- Product Card 3 -->
+                    
                         <div class="product-card">
                             <div class="discount-badge">۱۰٪ تخفیف</div>
                             <div class="product-image">
@@ -153,7 +160,7 @@
                             </div>
                              <div class="product-info">
                                 <h4 class="product-name">آجیل پذیرایی</h4>
-                                <!-- <div class="rating">*****</div> حذف شد -->
+                                
                                 <p class="old-price">۱۳۱۰۰۰ تومان</p>
                                 <p class="current-price">۱۱۸۰۰۰ تومان</p>
                                 <div class="weight-options">
@@ -173,7 +180,6 @@
                             </div>
                         </div>
 
-                        <!-- Product Card 4 -->
                         <div class="product-card">
                             <div class="discount-badge">۳۰٪ تخفیف</div>
                             <div class="product-image">
@@ -181,7 +187,7 @@
                             </div>
                              <div class="product-info">
                                 <h4 class="product-name">آجیل ویژه</h4>
-                                <!-- <div class="rating">*****</div> حذف شد -->
+                             
                                 <p class="old-price">۹۶۶۰۰۰ تومان</p>
                                 <p class="current-price">۶۷۶۲۰۰ تومان</p>
                                 <div class="weight-options">
@@ -202,12 +208,12 @@
                         </div>
 
                     </div>
-                    </div> <!-- پایان div product-cards-container برای آجیل شور -->
+                    </div> 
 
                     <h3 class="subsection-title" >خرید آجیل خام (شیرین)</h3>
 
                     <div class="product-cards-container">
-                        <!-- Product Card 1 - آجیل بلدا -->
+                     
                         <div class="product-card">
                             <div class="product-image">
                                 <img src="images/7.png" alt="آجیل یلدا">
@@ -233,7 +239,7 @@
                             </div>
                         </div>
 
-                        <!-- Product Card 2 - آجیل دیابتی -->
+                      
                         <div class="product-card">
                             <div class="product-image">
                                 <img src="images/1.png" alt="آجیل دیابتی">
@@ -259,7 +265,7 @@
                             </div>
                         </div>
 
-                        <!-- Product Card 3 - آجیل 4 مغز خام -->
+                     
                         <div class="product-card">
                             <div class="product-image">
                                 <img src="images/6.png" alt="آجیل 4 مغز خام">
@@ -285,7 +291,7 @@
                             </div>
                         </div>
 
-                        <!-- Product Card 4 - آجیل 5 مغز خام -->
+                  
                         <div class="product-card">
                             <div class="discount-badge">۸٪ تخفیف</div>
                             <div class="product-image">
@@ -312,12 +318,12 @@
                             </div>
                         </div>
 
-                    </div> <!-- پایان div product-cards-container برای آجیل خام -->
+                    </div> 
                 </section>
             </div>
         </main>
 
-    <footer class="main-footer">
+    <footer class="main-footer" id="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column about-us">
@@ -331,12 +337,12 @@
                     <div class="social-icons">
                         <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
                         <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
-                        <!-- اینجا میتونی آیکون‌های شبکه های اجتماعی دیگه رو اضافه کنی -->
+                    
                     </div>
                     <div class="enamad-logos">
                         <img src="https://via.placeholder.com/100x100?text=Enamad" alt="Enamad Logo">
                         <img src="https://via.placeholder.com/100x100?text=Samandehi" alt="Samandehi Logo">
-                        <!-- اینجا میتونی لوگوهای نماد اعتماد و ساماندهی رو بذاری -->
+                
                     </div>
                 </div>
                 <div class="footer-column address-map">
@@ -344,7 +350,7 @@
                     <p><i class="fas fa-map-marker-alt"></i> بین پیروزی 73 - میدان لادن</p>
                     <p>خشکبار بیرجند</p>
                     <div class="map-placeholder">
-                        <!-- اینجا میتونی iframe گوگل مپ رو بذاری -->
+              
                         <img src="https://via.placeholder.com/300x200?text=Google+Map" alt="Map Location">
                     </div>
                 </div>
@@ -355,12 +361,12 @@
         </div>
     </footer>
 
-    <!-- Ticket Icon -->
+  
     <div class="ticket-float-icon" id="ticketIcon">
         <i class="fas fa-headset"></i>
     </div>
 
-    <!-- Ticket Form Modal -->
+
     <div id="ticketModal" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
@@ -380,7 +386,7 @@
     </div>
 
     <script>
-        // JavaScript for modal functionality
+    
         const ticketIcon = document.getElementById('ticketIcon');
         const ticketModal = document.getElementById('ticketModal');
         const closeButton = document.querySelector('.close-button');
@@ -401,9 +407,8 @@
             }
         });
 
-        // Handle form submission with AJAX
         ticketForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
+            event.preventDefault(); 
 
             const formData = new FormData(this);
 
@@ -413,12 +418,12 @@
             })
             .then(response => response.text())
             .then(data => {
-                ticketMessageDiv.innerHTML = data; // Display success or error message
-                ticketForm.reset(); // Clear the form
-                // Optionally close modal after a short delay
+                ticketMessageDiv.innerHTML = data; 
+                ticketForm.reset(); 
+             
                 setTimeout(() => {
                     ticketModal.style.display = 'none';
-                    ticketMessageDiv.innerHTML = ''; // Clear message
+                    ticketMessageDiv.innerHTML = ''; 
                 }, 3000);
             })
             .catch(error => {
@@ -427,15 +432,14 @@
             });
         });
        
-         // ... (کدهای جاوااسکریپت برای modal ticket) ...
 
-         // JavaScript for Hamburger Menu - باید اینجا باشه
+      
     const hamburgerIcon = document.getElementById('hamburgerIcon');
     const offCanvasMenu = document.getElementById('offCanvasMenu');
     const closeOffCanvas = document.getElementById('closeOffCanvas');
     const menuOverlay = document.getElementById('menuOverlay');
 
-    if (hamburgerIcon) { // برای اطمینان که عنصر وجود داره
+    if (hamburgerIcon) {
         hamburgerIcon.addEventListener('click', () => {
             offCanvasMenu.classList.add('open');
             menuOverlay.classList.add('active');
@@ -443,7 +447,7 @@
         });
     }
 
-    if (closeOffCanvas) { // برای اطمینان که عنصر وجود داره
+    if (closeOffCanvas) { 
         closeOffCanvas.addEventListener('click', () => {
             offCanvasMenu.classList.remove('open');
             menuOverlay.classList.remove('active');
@@ -451,7 +455,7 @@
         });
     }
 
-    if (menuOverlay) { // برای اطمینان که عنصر وجود داره
+    if (menuOverlay) { 
         menuOverlay.addEventListener('click', () => {
             offCanvasMenu.classList.remove('open');
             menuOverlay.classList.remove('active');

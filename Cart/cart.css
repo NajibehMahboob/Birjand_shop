@@ -19,7 +19,7 @@
 .header-icon {
     position: relative;
     font-size: 1.6rem;
-    color: #4f46e5;
+    color: #2b5033;
     cursor: pointer;
 }
 
@@ -43,7 +43,7 @@
 .logo {
     font-size: 1.3rem;
     font-weight: bold;
-    color: #4f46e5;
+    color: #2b5033;
 }
 
 .search-box {
@@ -68,7 +68,7 @@
 .menu-btn {
     font-size: 1.6rem;
     cursor: pointer;
-    color: #4f46e5;
+    color: #2b5033;
 }
 
 .side-menu {
@@ -90,7 +90,7 @@
     text-align: left;
     font-size: 1.6rem;
     cursor: pointer;
-    color: #4f46e5;
+    color: #2b5033;
     margin-bottom: 20px;
 }
 
@@ -186,7 +186,7 @@ body {
 }
 
 .discount-input button {
-    background: #4f46e5;
+    background: #2b5033;
     color: white;
     border: none;
     padding: 8px 15px;
@@ -245,7 +245,7 @@ input:checked + .slider:before { transform: translateX(-22px); }
 
 .pay-btn {
     display: block;
-    background: #4f46e5;
+    background: #2b5033;
     text-align: center;
     color: white;
     padding: 12px;

@@ -864,3 +864,32 @@ input[type=number]::-webkit-outer-spin-button {
         display: flex !important; /* مطمئن شو که nav اصلی نمایش داده میشه */
     }
 }
+
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn-header {
+    padding: 8px 16px;
+    background-color: #555;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-header:hover {
+    background-color: #333;
+}
+
+.btn-signup {
+    background-color: #d58419;
+}
+
+.btn-signup:hover {
+    background-color: #a86511;
+}
