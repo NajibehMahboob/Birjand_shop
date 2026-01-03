@@ -2,40 +2,11 @@
 session_start();
 include "../db_config.php";
 
-
-// شماره فعلی در سشن
 $phoneSession = $_SESSION['login_phone'] ?? '';
 
-if ($phoneSession !== '') {
-    // چک موجود بودن شماره در دیتابیس
-    $stmt = $conn->prepare("SELECT id, username, phone FROM users WHERE phone = ?");
-    $stmt->bind_param("s", $phoneSession);
-    $stmt->execute();
-    $user = $stmt->get_result()->fetch_assoc();
-    $stmt->close();
-
-    if (!$user) {
-        // اگر شماره هنوز تو دیتابیس نیست → رکورد جدید بساز
-        $insert = $conn->prepare("INSERT INTO users (phone, username, is_verified) VALUES (?, '', 0)");
-        $insert->bind_param("s", $phoneSession);
-        $insert->execute();
-        $userId = $insert->insert_id;
-        $insert->close();
-
-        // حالا اطلاعات برای فرم
-        $username = '';
-        $phone = $phoneSession;
-    } else {
-        $userId = $user['id'];
-        $username = $user['username'];
-        $phone = $user['phone'];
-    }
-} else {
-    header("Location: sign_in.php");
-    exit();
+if ($phoneSession === '') {
+    die("کاربر لاگین نکرده است.");
 }
-
-
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $newUsername = trim($_POST['username']);
@@ -49,11 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['account_msg'] = "رمز عبور و تکرار آن یکی نیست.";
         $_SESSION['account_msg_class'] = "error";
     } else {
-  
-        $check = $conn->prepare(
-            "SELECT id FROM users WHERE username = ? AND id != ?"
-        );
-        $check->bind_param("si", $newUsername, $userId);
+
+        // چک کردن تکراری بودن نام کاربری
+        $check = $conn->prepare("SELECT id FROM users WHERE username = ? AND phone != ?");
+        $check->bind_param("ss", $newUsername, $phoneSession);
         $check->execute();
 
         if ($check->get_result()->num_rows > 0) {
@@ -63,14 +33,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($newPassword !== "") {
                 $hash = password_hash($newPassword, PASSWORD_DEFAULT);
                 $update = $conn->prepare(
-                    "UPDATE users SET username = ?, password = ? WHERE id = ?"
+                    "UPDATE users SET username = ?, password = ? WHERE phone = ?"
                 );
-                $update->bind_param("ssi", $newUsername, $hash, $userId);
+                $update->bind_param("sss", $newUsername, $hash, $phoneSession);
             } else {
                 $update = $conn->prepare(
-                    "UPDATE users SET username = ? WHERE id = ?"
+                    "UPDATE users SET username = ? WHERE phone = ?"
                 );
-                $update->bind_param("si", $newUsername, $userId);
+                $update->bind_param("ss", $newUsername, $phoneSession);
             }
 
             $update->execute();
@@ -90,6 +60,7 @@ $msg = $_SESSION['account_msg'] ?? "";
 $msgClass = $_SESSION['account_msg_class'] ?? "";
 unset($_SESSION['account_msg'], $_SESSION['account_msg_class']);
 ?>
+
 
 
 
@@ -199,11 +170,6 @@ button:hover {
     <?php endif; ?>
 
     <form action="" method="POST">
-
-<label>شماره تلفن</label>
-<input type="text"
-       value="<?php echo htmlspecialchars($phone); ?>"
-       disabled>
 
 <label>نام کاربری</label>
 <input type="text"

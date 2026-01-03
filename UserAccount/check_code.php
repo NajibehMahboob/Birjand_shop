@@ -24,3 +24,14 @@ if ($code == "12345") {
 } else {
     echo "کد اشتباه است!";
 }
+// بعد از اینکه کد تأیید شد
+$phone = $_SESSION['login_phone'];
+
+$stmt = $conn->prepare("SELECT id FROM users WHERE phone = ?");
+$stmt->bind_param("s", $phone);
+$stmt->execute();
+$user = $stmt->get_result()->fetch_assoc();
+$stmt->close();
+
+$_SESSION['user_id'] = $user['id'];
+?>

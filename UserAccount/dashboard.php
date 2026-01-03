@@ -440,6 +440,97 @@ body {
     font-size: 0.7rem;
 }
 
+
+
+/* Footer Styles */
+.main-footer {
+    background-color: var(--dark-green);
+    color: var(--white);
+    padding: 40px 0 20px;
+    margin-top: 40px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-column h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--white);
+    position: relative;
+}
+
+.footer-column h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-green);
+    margin-top: 5px;
+}
+
+.footer-column p {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+.footer-column i {
+    margin-left: 8px;
+    color: var(--primary-green);
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icon {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--primary-green);
+}
+
+.enamad-logos {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.enamad-logos img {
+    width: 80px;
+    height: 80px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+.map-placeholder img {
+    width: 100%;
+    height: 200px;
+    background-color: #f0f0f0;
+    display: block;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
 </style>
 </head>
 
@@ -458,15 +549,7 @@ body {
             <h3></h3>
         </div>
         <ul class="menu-list">
-            <li><a href="index.php">آجیل <i class="fas fa-chevron-left"></i></a></li>
-            <li><a href="index.php">خشکبار <i class="fas fa-chevron-left"></i></a></li>
-            <li><a href="index.php">زعفران <i class="fas fa-chevron-left"></i></a></li>
-            <li><a href="index.php">تنقلات <i class="fas fa-chevron-left"></i></a></li>
-            <li><a href="index.php">بسته‌های کادویی <i class="fas fa-chevron-left"></i></a></li>
-            <li><a href="index.php">کالای اساسی و خواربار <i class="fas fa-chevron-left"></i></a></li>
-            <li><a href="index.php">شکلات <i class="fas fa-chevron-left"></i></a></li>
-            <li><a href="index.php">محصولات ویژه <i class="fas fa-chevron-left"></i></a></li>
-            <li><a href="index.php">پک اقتصادی خانوار</a></li>
+            <li><a href="account.php">فروشگاه<i class="fas fa-chevron-left"></i></a></li>
         </ul>
         <ul class="menu-options">
             <li><a href="#footer"><i class="fas fa-paper-plane"></i> تماس با ما</a></li>
@@ -498,12 +581,12 @@ body {
 
                 <div class="header-left">
 
-                    <a href="./Cart/cart.php" class="header-icon">
+                    <a href="../Cart/cart.php" class="header-icon">
                         <i class="fa-solid fa-cart-shopping"></i>
                         <span class="cart-count">0</span>
                     </a>
                 
-                    <a href="./UserAccount/dashboard.php" class="header-icon">
+                    <a href="dashboard.php" class="header-icon">
                         <i class="fa-solid fa-user"></i>
                     </a>
                 
@@ -511,16 +594,8 @@ body {
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.php">صفحه نخست</a></li>
-                    <li class="dropdown">
-                        <a href="index.php">دسته بندی محصولات <i class="fas fa-caret-down"></i></a>
-                        <div class="dropdown-content">
-                         
-                            <a href="index.php">خشکبار</a>
-                            <a href="index.php">زعفران</a>
-                        </div>
-                    </li>
-                    <li><a href="cart.php">سبدخرید</a></li>
+                    <li><a href="account.php">فروشگاه</a></li>
+                    <li><a href="../Cart/cart.php">سبدخرید</a></li>
                     <li><a href="#footer">درباره ما</a></li>
                 </ul>
             </nav>
@@ -556,6 +631,45 @@ body {
     </div>
 
 </div>
+
+
+<footer class="main-footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column about-us">
+                    <h3>درباره ما</h3>
+                    <p>فروشگاه خشکبار بیرجند با بیش از سه سال سابقه فعالیت، با افتخار ارائه دهنده بهترین و باکیفیت‌ترین محصولات بومی بیرجند است. ما در این فروشگاه تلاش کرده‌ایم تا طعم اصیل و خاطره‌انگیز شیرینی‌های محلی، آجیل تازه، میوه‌های خشک‌شده و دیگر محصولات طبیعی این منطقه را با نازل‌ترین قیمت و کیفیت عالی در اختیار شما قرار دهیم. هدف ما فقط فروش نیست، بلکه ایجاد پلی میان سنت و زندگی امروزی، حفظ طعم‌های اصیل و حمایت از تولیدکنندگان محلی بیرجند است. با توسعه مداوم فروشگاه و افزایش تنوع محصولات، امیدواریم تجربه‌ای دلپذیر از خرید را برای مشتریان خود رقم بزنیم. ممنون که به ما اعتماد می‌کنید.</p>
+                </div>
+                <div class="footer-column contact-info">
+                    <h3>راه‌های ارتباطی با ما</h3>
+                    <p>اگر سوالی دارید، با ما تماس بگیرید:</p>
+                    <p><i class="fas fa-phone"></i> 09155010852 (آقای ابراهیم زاده)</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    
+                    </div>
+                    <div class="enamad-logos">
+                        <img src="https://via.placeholder.com/100x100?text=Enamad" alt="Enamad Logo">
+                        <img src="https://via.placeholder.com/100x100?text=Samandehi" alt="Samandehi Logo">
+                
+                    </div>
+                </div>
+                <div class="footer-column address-map">
+                    <h3>آدرس</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> بین پیروزی 73 - میدان لادن</p>
+                    <p>خشکبار بیرجند</p>
+                    <div class="map-placeholder">
+              
+                        <img src="https://via.placeholder.com/300x200?text=Google+Map" alt="Map Location">
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>طراحی شده توسط ایمن گستران تهران</p>
+            </div>
+        </div>
+    </footer>
 <script>
 const openBtn = document.getElementById("hamburgerIcon");
 const closeBtn = document.getElementById("closeOffCanvas");

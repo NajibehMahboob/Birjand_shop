@@ -1,0 +1,823 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap'); /* فونت فارسی */
+
+:root {
+    --primary-green: #386641;
+    --dark-green: #2b5033;
+    --light-gray: #f9f9f9;
+    --text-color: #333;
+    --white: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-gray);
+    direction: rtl; 
+    text-align: right;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.main-nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.main-nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 400;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: #d1d1d1;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--dark-green);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: right;
+}
+
+.dropdown-content a {
+    color: var(--white);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--primary-green);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Main Content */
+.main-content {
+    padding: 40px 0;
+    min-height: 400px;
+    background-color: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+/* Footer Styles */
+.main-footer {
+    background-color: var(--dark-green);
+    color: var(--white);
+    padding: 40px 0 20px;
+    margin-top: 40px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-column h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--white);
+    position: relative;
+}
+
+.footer-column h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-green);
+    margin-top: 5px;
+}
+
+.footer-column p {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+.footer-column i {
+    margin-left: 8px;
+    color: var(--primary-green);
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icon {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--primary-green);
+}
+
+.enamad-logos {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.enamad-logos img {
+    width: 80px;
+    height: 80px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+.map-placeholder img {
+    width: 100%;
+    height: 200px;
+    background-color: #f0f0f0;
+    display: block;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Ticket Floating Icon */
+.ticket-float-icon {
+    position: fixed;
+    bottom: 30px;
+    right: 30px; /* برای راست به چپ */
+    background-color: var(--primary-green);
+    color: var(--white);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.ticket-float-icon:hover {
+    background-color: var(--dark-green);
+    transform: scale(1.05);
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    text-align: right;
+}
+
+.modal-content h2 {
+    color: var(--primary-green);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-content p {
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.close-button {
+    color: #aaa;
+    float: left; /* برای سمت چپ در rtl */
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--dark-green);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.modal-content form input[type="text"],
+.modal-content form input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    direction: rtl;
+    text-align: right;
+}
+
+.modal-content form button {
+    background-color: var(--primary-green);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content form button:hover {
+    background-color: var(--dark-green);
+}
+
+#ticketMessage {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    text-align: center;
+    font-weight: 700;
+    color: var(--primary-green);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-left, .header-right {
+        margin-bottom: 15px;
+    }
+
+    .header-center h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+    }
+
+    .main-nav ul li {
+        margin: 5px 10px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-column h3::after {
+        margin: 5px auto 0;
+    }
+
+    .social-icons, .enamad-logos {
+        justify-content: center;
+        display: flex;
+    }
+}
+
+/* Product Section Styles */
+.products-section {
+    padding: 40px 0;
+    text-align: center;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.subsection-title {
+    font-size: 1.8rem;
+    color: var(--primary-green);
+    margin-bottom: 40px; /* فاصله از بخش زیرین */
+    margin-top: 60px; /* این خط رو برای فاصله از بخش بالایی اضافه کن اگه قبلا توی HTML با style اینلاین ندادی */
+    font-weight: 700;
+    
+    /* برای وسط چین کردن و قرار دادن خطوط کناری */
+    display: flex; /* تبدیل به Flex Container */
+    align-items: center; /* وسط چین عمودی محتوا (متن و خطوط) */
+    justify-content: center; /* وسط چین افقی محتوا */
+    
+    width: fit-content; /* عرض را متناسب با محتوا تنظیم کن */
+    margin-left: auto; /* برای وسط چین کردن کل عنصر در والدش */
+    margin-right: auto; /* برای وسط چین کردن کل عنصر در والدش */
+}
+
+/* استایل دهی خطوط کناری */
+.subsection-title::before,
+.subsection-title::after {
+    content: '';
+    display: block; /* اطمینان از اینکه به عنوان بلاک رفتار کنند */
+    width: 50px; /* طول خطوط کناری */
+    height: 2px;
+    background-color: var(--primary-green);
+    margin: 0 15px; /* فاصله خطوط از متن */
+}
+
+/* در صورت نیاز به تنظیمات ریسپانسیو برای خطوط */
+@media (max-width: 768px) {
+    .subsection-title::before,
+    .subsection-title::after {
+        width: 30px; /* طول کمتر خطوط در موبایل */
+        margin: 0 10px; /* فاصله کمتر در موبایل */
+    }
+}
+
+.subsection-title::before,
+.subsection-title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 50px; /* طول خطوط کناری */
+    height: 2px;
+    background-color: var(--primary-green);
+}
+
+.subsection-title::before {
+    right: -70px; /* فاصله از متن */
+}
+
+.subsection-title::after {
+    left: -70px; /* فاصله از متن */
+}
+
+
+.product-cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* برای اینکه در صفحات کوچک به خط بعد برن */
+    gap: 25px; /* فاصله بین کارت ها */
+}
+
+.product-card {
+    background-color: var(--white);
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px; /* عرض ثابت برای هر کارت */
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.discount-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px; /* در RTL */
+    background-color: #e74c3c;
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    z-index: 10;
+}
+
+.product-image {
+    margin-bottom: 20px;
+    height: 180px; /* ارتفاع ثابت برای تصویر */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+    object-fit: contain; /* برای اینکه تصویر کات نشه */
+}
+
+.product-info {
+    text-align: right;
+}
+
+.product-name {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.old-price {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    display: block; /* برای اینکه زیر قیمت جدید قرار بگیره */
+}
+
+.current-price {
+    color: var(--primary-green);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.weight-options {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: flex-end; /* برای RTL */
+}
+
+.weight-label {
+    font-size: 0.9rem;
+    color: #555;
+    margin-left: 10px; /* فاصله از دکمه ها */
+}
+
+.weight-btn {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    color: #555;
+    padding: 8px 12px;
+    margin-left: 5px; /* فاصله بین دکمه ها */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+.weight-btn.active,
+.weight-btn:hover {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+    color: var(--white);
+}
+
+.add-to-cart {
+    display: flex;
+    justify-content: space-between; /* برای فاصله انداختن بین دکمه و کنترل تعداد */
+    align-items: center;
+    margin-top: 25px;
+    gap: 10px;
+}
+
+.add-btn {
+    background-color: #e74c3c;
+    color: var(--white);
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    flex-grow: 1; /* برای اینکه دکمه "افزودن به سبد خرید" فضای بیشتری بگیره */
+    transition: background-color 0.3s ease;
+    font-family: 'Vazirmatn', sans-serif; 
+}
+
+.add-btn:hover {
+    background-color: #c0392b;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.qty-btn {
+    background-color: #f9f9f9;
+    border: none;
+    color: #555;
+    padding: 8px 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.qty-btn:hover {
+    background-color: #eee;
+}
+
+.qty-input {
+    width: 40px;
+    text-align: center;
+    border: none;
+    font-size: 1rem;
+    -moz-appearance: textfield; /* برای فایرفاکس */
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+}
+
+/* Hide spin buttons for number input */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Responsive Adjustments for Products */
+@media (max-width: 1200px) {
+    .product-cards-container {
+        justify-content: space-evenly; /* برای توزیع بهتر در ردیف */
+    }
+}
+
+@media (max-width: 992px) {
+    .product-cards-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* کوچکتر کردن کارت ها */
+    }
+    .product-card {
+        width: unset; /* برای اینکه عرض کارت منعطف بشه */
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    .subsection-title {
+        font-size: 1.5rem;
+    }
+    .subsection-title::before,
+    .subsection-title::after {
+        width: 30px;
+        right: -45px;
+        left: -45px;
+    }
+    .product-cards-container {
+        flex-direction: column; /* در موبایل به صورت ستونی نمایش داده شوند */
+        align-items: center;
+    }
+    .product-card {
+        width: 90%; /* عرض بیشتر در موبایل */
+        max-width: 350px; /* حداکثر عرض در موبایل */
+    }
+}
+/* Separator Line */
+/* Separator Line */
+.separator-line {
+    width: 900px; /* طول خط را افزایش دادیم */
+    height: 3px;
+    background-color: #e0e0e0;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+/* Hamburger Menu Icon */
+.hamburger-menu-icon {
+    position: fixed;
+    top: 110px;
+    right: 20px; /* برای RTL */
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    z-index: 1002; /* بالاتر از همه چیز */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+.hamburger-menu-icon:hover {
+    background-color: var(--dark-green);
+}
+
+.hamburger-menu-icon i {
+    font-size: 1.3rem;
+}
+
+/* Off-canvas Menu Panel */
+.off-canvas-menu {
+    position: fixed;
+    top: 0;
+    right: -300px; /* شروع از بیرون صفحه برای RTL */
+    width: 300px;
+    height: 100%;
+    background-color: var(--white);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2); /* سایه به سمت چپ */
+    z-index: 1003;
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto; /* برای اسکرول در صورت نیاز */
+    direction: rtl;
+    text-align: right;
+}
+
+.off-canvas-menu.open {
+    right: 0; /* وقتی باز میشه میاد داخل صفحه */
+}
+
+.menu-header {
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.close-off-canvas {
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    color: var(--white);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.close-off-canvas:hover {
+    opacity: 1;
+}
+
+.menu-list, .menu-options {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+}
+
+.menu-list li a, .menu-options li a {
+    display: flex;
+    justify-content: space-between; /* برای فاصله بین متن و آیکون */
+    align-items: center;
+    padding: 15px 20px;
+    color: var(--text-color);
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-list li a:hover, .menu-options li a:hover {
+    background-color: #f5f5f5;
+    color: var(--primary-green);
+}
+
+.menu-list li a i.fa-chevron-left {
+    color: #999;
+    font-size: 0.8rem;
+}
+
+.menu-options {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.menu-options li a i {
+    margin-left: 10px; /* فاصله آیکون از متن برای RTL */
+    color: var(--primary-green);
+    font-size: 1.1rem;
+}
+
+.menu-options li:last-child a {
+    border-bottom: none; /* حذف خط از آخرین آیتم */
+}
+
+/* Overlay */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1002;
+    display: none; /* مخفی در حالت عادی */
+}
+
+.menu-overlay.active {
+    display: block; /* نمایش وقتی منو بازه */
+}
+
+/* Responsive adjustments for hamburger icon */
+@media (min-width: 992px) {
+    .hamburger-menu-icon {
+     
+    }
+    /* در اینجا میتونی nav اصلی رو برای دسکتاپ نمایش بدی اگه مخفیش کرده بودی */
+    .main-nav {
+        display: flex !important; /* مطمئن شو که nav اصلی نمایش داده میشه */
+    }
+}
+
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn-header {
+    padding: 8px 16px;
+    background-color: #555;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-header:hover {
+    background-color: #333;
+}
+
+.btn-signup {
+    background-color: #d58419;
+}
+
+.btn-signup:hover {
+    background-color: #a86511;
+}
