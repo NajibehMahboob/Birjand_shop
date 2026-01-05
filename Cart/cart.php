@@ -1284,17 +1284,8 @@
             `;
             testBtn.onclick = () => CartManager.addTestProducts();
             
-            const debugBtn = document.createElement('button');
-            debugBtn.textContent = '🐛 دیباگ localStorage';
-            debugBtn.style.cssText = `
-                background: #28a745;
-                color: white;
-                border: none;
-                padding: 10px 15px;
-                border-radius: 5px;
-                cursor: pointer;
-                font-family: inherit;
-            `;
+            
+ 
             debugBtn.onclick = () => {
                 console.log('🔍 دیباگ localStorage:');
                 const cart = JSON.parse(localStorage.getItem('birjand_shop_cart') || '[]');
