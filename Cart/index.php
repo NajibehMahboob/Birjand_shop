@@ -495,6 +495,10 @@
         </div>
     </div>
 
+
+
+
+
     <script>
     
         const ticketIcon = document.getElementById('ticketIcon');
@@ -580,8 +584,233 @@
             document.body.style.overflow = 'auto';
         }
     });
-</script>
+
+
+    
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('✅ صفحه اصلی بارگذاری شد - سیستم لاگین چک فعال شد');
+    
+    // پیدا کردن همه دکمه‌های "افزودن به سبد خرید"
+    const addToCartButtons = document.querySelectorAll('.add-btn');
+    
+    // اضافه کردن رویداد کلیک به هر دکمه
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            console.log('🛒 دکمه افزودن به سبد خرید کلیک شد');
+            
+            // نمایش پیام به کاربر
+            showLoginMessage();
+        });
+    });
+    
+    // همچنین اضافه کردن رویداد برای دکمه‌های + و - تعداد
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('qty-btn') && !e.target.classList.contains('add-btn')) {
+            const qtyInput = e.target.closest('.quantity-control')?.querySelector('.qty-input');
+            if (!qtyInput) return;
+            
+            let value = parseInt(qtyInput.value) || 1;
+            
+            if (e.target.textContent === '-' && value > 1) {
+                qtyInput.value = value - 1;
+            } else if (e.target.textContent === '+') {
+                qtyInput.value = value + 1;
+            }
+        }
+        
+        // مدیریت دکمه‌های انتخاب وزن
+        if (e.target.classList.contains('weight-btn') && !e.target.classList.contains('active')) {
+            const weightOptions = e.target.closest('.weight-options');
+            if (!weightOptions) return;
+            
+            weightOptions.querySelectorAll('.weight-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            e.target.classList.add('active');
+        }
+    });
+});
+
+// تابع نمایش پیام لاگین
+function showLoginMessage() {
+    // ایجاد مودال برای پیام
+    const modal = document.createElement('div');
+    modal.id = 'loginModal';
+    modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        animation: fadeIn 0.3s ease;
+    `;
+    
+    const modalContent = document.createElement('div');
+    modalContent.style.cssText = `
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 400px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        animation: slideUp 0.3s ease;
+    `;
+    
+    modalContent.innerHTML = `
+        <div style="margin-bottom: 20px;">
+            <i class="fas fa-user-lock" style="font-size: 3rem; color: #386641; margin-bottom: 15px;"></i>
+            <h3 style="color: #2b5033; margin-bottom: 15px; font-size: 1.3rem;">کاربر گرامی</h3>
+            <p style="color: #555; line-height: 1.6; margin-bottom: 25px;">
+                برای افزودن محصول به سبد خرید، ابتدا وارد حساب کاربری خود شوید.
+            </p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+            <a href="./UserAccount/sign_in.php" 
+               style="background: linear-gradient(135deg, #386641, #2b5033); 
+                      color: white; 
+                      padding: 14px; 
+                      border-radius: 8px; 
+                      text-decoration: none; 
+                      font-weight: 600;
+                      transition: all 0.3s;">
+                <i class="fas fa-sign-in-alt"></i> ورود به حساب کاربری
+            </a>
+            <a href="./UserAccount/sign_up.php" 
+               style="background: #f0f0f0; 
+                      color: #333; 
+                      padding: 14px; 
+                      border-radius: 8px; 
+                      text-decoration: none; 
+                      font-weight: 600;
+                      transition: all 0.3s;">
+                <i class="fas fa-user-plus"></i> ثبت نام جدید
+            </a>
+            <button id="closeLoginModal" 
+                    style="background: #ef4444; 
+                           color: white; 
+                           border: none; 
+                           padding: 12px; 
+                           border-radius: 8px; 
+                           cursor: pointer; 
+                           font-weight: 600;
+                           margin-top: 10px;">
+                بستن
+            </button>
+        </div>
+    `;
+    
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+    
+    // اضافه کردن انیمیشن
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // رویداد بستن مودال
+    document.getElementById('closeLoginModal').addEventListener('click', function() {
+        modal.style.animation = 'fadeOut 0.3s ease forwards';
+        setTimeout(() => {
+            if (modal.parentNode) {
+                modal.parentNode.removeChild(modal);
+            }
+        }, 300);
+    });
+    
+    // بستن با کلیک خارج از مودال
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.animation = 'fadeOut 0.3s ease forwards';
+            setTimeout(() => {
+                if (modal.parentNode) {
+                    modal.parentNode.removeChild(modal);
+                }
+            }, 300);
+        }
+    });
+    
+    // اضافه کردن انیمیشن fadeOut
+    const fadeOutStyle = document.createElement('style');
+    fadeOutStyle.textContent = `
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+    `;
+    document.head.appendChild(fadeOutStyle);
+}
+
+// همچنین اضافه کردن پیام ساده‌تر (آلترناتیو)
+function showSimpleLoginAlert() {
+    if (confirm('کاربر گرامی، برای افزودن محصول به سبد خرید ابتدا وارد حساب کاربری خود شوید.\n\nآیا می‌خواهید به صفحه ورود هدایت شوید؟')) {
+        window.location.href = './UserAccount/sign_in.php';
+    }
+}
+
+// برای تست سریع: دکمه دیباگ اضافه کنید
+document.addEventListener('DOMContentLoaded', function() {
+    // اضافه کردن دکمه تست (فقط در حالت توسعه)
+    const debugDiv = document.createElement('div');
+    debugDiv.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 9998;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    `;
+    
+    const testBtn = document.createElement('button');
+    testBtn.textContent = '🧪 تست پیام لاگین';
+    testBtn.style.cssText = `
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 14px;
+    `;
+    testBtn.onclick = showLoginMessage;
+    
+    debugDiv.appendChild(testBtn);
+    document.body.appendChild(debugDiv);
+});
+
+console.log('✅ سیستم چک لاگین برای صفحه اصلی فعال شد');
 
     </script>
+    
+    
+
+    
 </body>
 </html>
