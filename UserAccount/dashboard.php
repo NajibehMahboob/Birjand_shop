@@ -565,7 +565,6 @@ body {
     <header class="main-header">
         <div class="container">
             <div class="header-content">
- 
 
                 <div class="header-right">
                     <div class="search-box">
@@ -578,8 +577,7 @@ body {
                     <h1>خشکبار بیرجند</h1>
                 </div>
 
-
-                <div class="header-left">
+                 <div class="header-left">
 
                     <a href="../Cart/cart.php" class="header-icon">
                         <i class="fa-solid fa-cart-shopping"></i>
@@ -591,6 +589,7 @@ body {
                     </a>
                 
                 </div>
+
             </div>
             <nav class="main-nav">
                 <ul>

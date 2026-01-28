@@ -4,10 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>خشکبار بیرجند</title>
-    <<link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+<style>
 
+.header-left .header-icon {
+    color: white !important;
+    font-size: 2.0rem !important;
+}
+
+.header-left .cart-count {
+    background: red !important;
+    color: white !important;
+    top: 38px !important;
+    left: 260px !important;
+    font-size: 0.8rem !important;
+    width: 20px !important;
+    height: 20px !important;
+}
+
+</style>
 <body>
     <?php include '../db_config.php'; ?>
 
@@ -42,6 +59,7 @@
     <header class="main-header">
         <div class="container">
             <div class="header-content">
+
                 <div class="header-right">
                     <div class="search-box">
                         <input type="text" placeholder="جستجو برای محصولات...">
@@ -53,32 +71,38 @@
                     <h1>خشکبار بیرجند</h1>
                 </div>
 
-                <div class="header-left">
+                 <div class="header-left">
+
                     <a href="../Cart/cart.php" class="header-icon">
                         <i class="fa-solid fa-cart-shopping"></i>
                         <span class="cart-count">0</span>
                     </a>
+                
                     <a href="dashboard.php" class="header-icon">
                         <i class="fa-solid fa-user"></i>
                     </a>
+                
                 </div>
+
             </div>
             <nav class="main-nav">
-                <ul>
-                    <li><a href="dashboard.php">داشبورد</a></li>
-                    <li class="dropdown">
-                        دسته بندی محصولات <i class="fas fa-caret-down"></i>
-                        <div class="dropdown-content">
-                            <a href="#nuts">خشکبار</a>
-                            <a href="#zaferan">زعفران</a>
-                        </div>
-                    </li>
-                    <li><a href="../Cart/cart.php">سبدخرید</a></li>
-                    <li><a href="#footer">درباره ما</a></li>
-                </ul>
-            </nav>
+            <ul>
+                <li><a href="dashboard.php">داشبورد</a></li>
+                <li class="dropdown">
+                    دسته بندی محصولات <i class="fas fa-caret-down"></i>
+                    <div class="dropdown-content">
+                        <a href="#nuts">خشکبار</a>
+                        <a href="#zaferan">زعفران</a>
+                    </div>
+                </li>
+                <li><a href="../Cart/cart.php">سبدخرید</a></li>
+                <li><a href="#footer">درباره ما</a></li>
+            </ul>
+        </nav>
         </div>
-    </header>    <main class="main-content">
+    </header>
+
+    <main class="main-content">
             <div class="container">
                 <section class="products-section">
                 <h3 class="subsection-title"> خشکبار</h3>

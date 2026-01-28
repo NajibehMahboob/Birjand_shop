@@ -19,7 +19,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--light-gray);
-    direction: rtl; /* برای فارسی */
+    direction: rtl; 
     text-align: right;
 }
 
@@ -30,14 +30,15 @@ body {
     padding: 20px 0;
 }
 
+
 /* Header Styles */
 .main-header {
     background-color: var(--primary-green);
     color: var(--white);
-    padding: 15px 0;
-    position: sticky; /* این خط باعث میشه هدر ثابت بمونه */
-    top: 0;           /* این خط میگه به بالای صفحه بچسبه */
-    z-index: 999; 
+    padding: 20px 0 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .header-content {
@@ -46,95 +47,164 @@ body {
     align-items: center;
     padding-bottom: 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.header-left .cart-icon {
     position: relative;
-    color: var(--white);
-    font-size: 1.8rem;
-    text-decoration: none;
+    min-height: 60px;
 }
 
+/* قسمت چپ: آیکون‌ها - فقط این تعریف */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-left: 20px; /* برای RTL اینجا left میشود */
+}
+
+/* فقط این تعریف برای header-icon */
+.header-icon {
+    position: relative;
+    color: #ffffff !important; /* سفید با !important */
+    font-size: 2.2rem !important; /* بزرگ */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.header-icon:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* فقط این تعریف برای cart-count */
 .cart-count {
     position: absolute;
-    top: -5px;
-    left: -5px;
-    background-color: #e74c3c;
-    color: var(--white);
+    top: -2px; /* بالاتر */
+    right: -2px; /* برای RTL باید right باشد */
+    background: #ff0000 !important; /* قرمز روشن */
+    color: white !important;
+    font-size: 0.8rem;
+    min-width: 20px;
+    height: 20px;
     border-radius: 50%;
-    padding: 2px 7px;
-    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border: 2px solid var(--primary-green);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+/* قسمت وسط: عنوان */
+.header-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .header-center h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    letter-spacing: 1px;
+    color: var(--white);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+/* قسمت راست: جستجو */
+.header-right {
+    margin-right: 20px; /* برای RTL اینجا right میشود */
 }
 
 .search-box {
     display: flex;
-    border-radius: 5px;
-    overflow: hidden;
+    align-items: center;
     background-color: var(--white);
+    border-radius: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+    padding: 5px;
+    width: 300px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .search-box input {
     border: none;
-    padding: 10px 15px;
+    padding: 12px 15px;
     font-size: 1rem;
     outline: none;
     flex-grow: 1;
-    direction: rtl;
     text-align: right;
+    font-family: 'Vazirmatn', sans-serif;
+    background: transparent;
 }
 
 .search-box button {
-    background-color: var(--dark-green);
+    background: none;
     border: none;
-    color: var(--white);
+    color: var(--dark-green);
     padding: 10px 15px;
     cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .search-box button:hover {
-    background-color: #24422b;
+    background-color: rgba(56, 102, 65, 0.1);
+    color: var(--primary-green);
+}
+
+/* منوی اصلی */
+.main-nav {
+    margin-top: 15px;
 }
 
 .main-nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    padding-top: 15px;
+    padding: 0;
+    margin: 0;
 }
 
 .main-nav ul li {
-    margin: 0 15px;
+    margin: 0 20px;
     position: relative;
 }
 
 .main-nav ul li a {
     color: var(--white);
     text-decoration: none;
-    font-weight: 400;
-    padding: 5px 10px;
-    transition: color 0.3s ease;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: all 0.3s;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    display: inline-block;
 }
 
 .main-nav ul li a:hover {
-    color: #d1d1d1;
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
 }
 
+/* DROPDOWN */
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: var(--dark-green);
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     border-radius: 5px;
     overflow: hidden;
     text-align: right;
@@ -142,10 +212,9 @@ body {
 
 .dropdown-content a {
     color: var(--white);
-    padding: 12px 16px;
+    padding: 12px;
     text-decoration: none;
     display: block;
-    transition: background-color 0.3s ease;
 }
 
 .dropdown-content a:hover {
@@ -155,6 +224,164 @@ body {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1f2937;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.card i {
+    font-size: 2rem;
+    margin-bottom: 12px;
+    color: #4f46e5;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.hamburger-menu-icon {
+    position: fixed;
+    top: 110px;
+    right: 20px; /* برای RTL */
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    z-index: 1002; /* بالاتر از همه چیز */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+.hamburger-menu-icon:hover {
+    background-color: var(--dark-green);
+}
+
+.hamburger-menu-icon i {
+    font-size: 1.3rem;
+}
+.off-canvas-menu {
+    position: fixed;
+    top: 0;
+    right: -300px; /* شروع از بیرون صفحه برای RTL */
+    width: 300px;
+    height: 100%;
+    background-color: var(--white);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2); /* سایه به سمت چپ */
+    z-index: 1003;
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto; /* برای اسکرول در صورت نیاز */
+    direction: rtl;
+    text-align: right;
+}
+
+.off-canvas-menu.open {
+    right: 0; /* وقتی باز میشه میاد داخل صفحه */
+}
+
+.menu-header {
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.close-off-canvas {
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    color: var(--white);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.close-off-canvas:hover {
+    opacity: 1;
+}
+
+.menu-list, .menu-options {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+}
+
+.menu-list li a, .menu-options li a {
+    display: flex;
+    justify-content: space-between; /* برای فاصله بین متن و آیکون */
+    align-items: center;
+    padding: 15px 20px;
+    color: var(--text-color);
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-list li a:hover, .menu-options li a:hover {
+    background-color: #f5f5f5;
+    color: var(--primary-green);
+}
+
+.menu-list li a i.fa-chevron-left {
+    color: #999;
+    font-size: 0.8rem;
+}
+
+.menu-options {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.menu-options li a i {
+    margin-left: 10px; /* فاصله آیکون از متن برای RTL */
+    color: var(--primary-green);
+    font-size: 1.1rem;
+}
+
+.menu-options li:last-child a {
+    border-bottom: none;
+}
+
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1002;
+    display: none;
+}
+
+.menu-overlay.active {
+    display: block; 
+}
+
 
 /* Main Content */
 .main-content {
